@@ -6,9 +6,7 @@ const path = require('path');
 const pg = require('pg');
 const https = require('https');
 const options = { cert: fs.readFileSync('/Users/' + process.env.USER + '/server.crt'), key: fs.readFileSync('/Users/' + process.env.USER + '/server.key')};
-const notesRoute = require('./routes/notes')
-
-const connectPg = 'postgres://vadim:1234@localhost/homepage_portfolio'
+const BlogRoute = require('./routes/blog')
 
 const app = express();
 
@@ -17,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public/build')));
 
-app.use('/notes', notesRoute)
+app.use('/blog', BlogRoute)
 
 let server = https.createServer(options, app);
 server.listen(8001, function(){
