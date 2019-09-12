@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, 'public/build')));
 app.use('/blog', BlogRoute)
 
 let server = https.createServer(options, app);
-server.listen(8001, function(){
+server.listen(8001, function() {
     console.log("server running at https://localhost:8001/")
 });
 

@@ -173,6 +173,21 @@ sequelize.sync()
                     })
                 }
             });
+        Comment.findOne({
+            where: {
+                id: 1
+            }
+        })
+            .then(async (comment) => {
+                if (!comment){
+                    Comment.create({
+                        author: 'Pupa',
+                        text: 'Псу нужна мединская помощь, я щитаю...',
+                        date: new Date(),
+                        articleId: 1
+                    })
+                }
+            })
     });
 
 
@@ -181,6 +196,6 @@ module.exports = {
     Sequelize,
     Comment,
     Article,
-    Tag
+    Tag,
 }
 
