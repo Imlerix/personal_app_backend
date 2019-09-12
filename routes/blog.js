@@ -3,17 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', async function(req, res, next) {
-    // Tag.create({
-    //     name: 'Good people'
-    // })
-    // Article.create({
-    //     date: new Date(),
-    //     name_RU: 'Пум-пум',
-    //     name_EN: 'Pum-pum',
-    //     text_RU: 'Некультурно очень поступили эти молодые люди, нежелательно так делать, пусть подолбятся в жеппу',
-    //     text_EN: 'These young people have acted very uncultured, it is undesirable to do so, even if they give a fuck to zheppa',
-    //     tags: [2]
-    // })
+
 
     let {tags, filter, page, search} = req.query;
     console.log(req.query)
@@ -102,9 +92,10 @@ router.get('/:id', async function (req, res, next) {
 
     article.comments = await Comment.findAll({where: {articleId: article.id}})
 
-    res.json(article).catch((e) => {
-        req.error = e;
-    })
+    res.json(article)
+        .catch((e) => {
+            req.error = e;
+        })
     next()
 })
 
@@ -115,7 +106,6 @@ router.post('/incrementViews/:id', async function (req, res, next) {
         }
     })
     article = article.toJSON()
-    console.log(article)
 
     Article.update(
         {
@@ -126,6 +116,7 @@ router.post('/incrementViews/:id', async function (req, res, next) {
             }
         }
     )
+    next()
 })
 
 module.exports = router;
