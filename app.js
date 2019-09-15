@@ -23,8 +23,8 @@ app.use('/portfolio', PortfolioRoute)
 app.use('/contacts', ContactsRoute)
 
 let server = https.createServer(options, app);
-server.listen(8001, function() {
-    console.log("server running at https://localhost:8001/")
+server.listen(3000, function() {
+    console.log("server running at https://localhost:3000/")
 });
 
 
