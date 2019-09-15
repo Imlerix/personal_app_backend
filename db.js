@@ -319,7 +319,16 @@ Link.init({
     url: {
         type: Sequelize.STRING,
         allowNull: false
-    }
+    },
+    icon: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
+    isContacts: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false,
+        defaultValue: false
+    },
 }, {sequelize, modelName: 'link' });
 
 
@@ -375,6 +384,7 @@ sequelize.sync()
             .then(async (folder) => {
                 if (!folder){
                     Folder.create({
+                        id: 1,
                         root: true,
                         name_ru: 'Портфолио',
                         name_en: 'Portfolio',
@@ -386,12 +396,14 @@ sequelize.sync()
                             url: '/about'
                         })
                         Folder.create({
+                            id: 2,
                             parent_id: 1,
                             name_ru: 'Проекты',
                             name_en: 'Projects',
                             url: '/projects'
                         })
                             Folder.create({
+                                id: 3,
                                 parent_id: 2,
                                 name_ru: 'Веб',
                                 name_en: 'Web',
@@ -433,6 +445,18 @@ sequelize.sync()
                                         name: 'Backend репозиторий',
                                         url: 'https://ibb.co/xYm5Y4p',
                                     })
+                    Link.create({
+                        name: 'Github',
+                        url: 'https://github.com/Imlerix',
+                        isContacts: true,
+                        icon: 'github'
+                    })
+                    Link.create({
+                        name: 'Vk',
+                        url: 'https://vk.com/imlerix',
+                        isContacts: true,
+                        icon: 'vk'
+                    })
                 }
             });
     });

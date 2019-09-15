@@ -25,6 +25,7 @@ router.get('/', async function (req, res, next) {
 
             }
         })
+    console.log(folders)
 
     res.json(folders)
         .catch((e) => {
