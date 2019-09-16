@@ -1,0 +1,38 @@
+version: '3.2'
+
+services:
+
+  frontend:
+    build: /opt/frontend
+    ports:
+      - "8080:80"
+
+  backend:
+    build: ./backend
+    volumes:
+      - /opt/backend/public:/app/public
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: postgres:latest
+    volumes:
+      - /opt/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      DB: personal_app
+      DB_LOGIN: vadim
+      DB_PASSWORD: 1234
+
+networks:
+
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.0.1/16
