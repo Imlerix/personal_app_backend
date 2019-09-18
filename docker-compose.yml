@@ -12,7 +12,7 @@ services:
     volumes:
       - /opt/backend/public:/app/public
     ports:
-      - "3000:3000"
+      - "${PORT}:${PORT}"
     depends_on:
       - db
     links:
@@ -25,14 +25,6 @@ services:
     ports:
       - 5432:5432
     environment:
-      DB: personal_app
-      DB_LOGIN: vadim
-      DB_PASSWORD: 1234
-
-networks:
-
-  default:
-    ipam:
-      driver: default
-      config:
-        - subnet: 10.0.0.1/16
+      DB: "${DB}"
+      DB_LOGIN: "${DB_LOGIN}"
+      DB_PASSWORD: "${DB_PASSWORD}"

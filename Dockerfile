@@ -10,4 +10,3 @@ RUN apk add --virtual .gyp \
 COPY . /app
 ENTRYPOINT npm run start
 EXPOSE 8080
-CMD [ "http-server", "dist" ]

@@ -2,8 +2,9 @@ const Sequelize = require('sequelize');
 const { Model, Op } = Sequelize;
 
 const sequelize = new Sequelize(process.env.DB, process.env.DB_LOGIN, process.env.DB_PASSWORD, {
-    host: 'localhost',
+    host: process.env.DEV === 'true' ? 'localhost' : 'db', // change to db with Docker
     dialect: 'postgres',
+    logging: false,
     define: {
         underscored: true
     },
