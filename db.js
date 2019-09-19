@@ -343,7 +343,7 @@ sequelize.sync()
             .then(async (tag) => {
                 if (!tag){
                     Tag.create({
-                        name: 'Unity'
+                        name: 'Docker'
                     })
                 }
             });
@@ -358,10 +358,10 @@ sequelize.sync()
                 if (!article){
                     Article.create({
                         date: new Date(),
-                        name_RU: 'Психичное прушенье',
-                        name_EN: 'Psychofall',
-                        text_RU: 'Смотрите это моя собака и она бегает за своим хвостом. Эх, это потому что у нее психичное прушенье. И у меня психичное прушенье. Пойду чаю попью',
-                        text_EN: 'Look this is my dog ​​and she runs after her tail. Eh, this is because she has a mental collapse. And I have a mental collapse. I\'ll go have some tea',
+                        name_RU: 'Настройка Docker c PRER',
+                        name_EN: 'Config Docker with PRER',
+                        text_RU: '',
+                        text_EN: '',
                         tags: [1]
                     })
                 }
@@ -374,8 +374,8 @@ sequelize.sync()
             .then(async (comment) => {
                 if (!comment){
                     Comment.create({
-                        author: 'Pupa',
-                        text: 'Псу нужна мединская помощь, я щитаю...',
+                        author: 'vasya_3000',
+                        text: 'Docker очень классная технология',
                         date: new Date(),
                         articleId: 1
                     })
@@ -413,38 +413,55 @@ sequelize.sync()
                             })
                                 Project.create({
                                     parent_id: 3,
-                                    name_ru: 'Портал по подбору проектов',
-                                    name_en: 'Portal of projects selection',
+                                    name_ru: 'Udachin.tech',
+                                    name_en: 'Udachin.tech',
                                     role_ru: 'Создатель сайта',
                                     role_en: 'Creator of the site',
-                                    url: '/projects/web/teams_mospolytech',
-                                    linkToSite: 'http://teams.mospolytech.ru/',
-                                    icon: 'https://lh3.googleusercontent.com/YzhvUZRsJnkZMaAl_Tj49SkSiVVb5OX8HJK7kDgbKd07QUqlcG7f2DG6LJLrcwYs3OI',
-                                    desc_ru: 'Для того чтобы начать работу над проектами Для того чтобы начать работу над проектами вам необходимо зарегистрироваться на сайте в качестве исполнителя. Как только вы пройдёте процедуру регистрации у вас автоматически создастся ваша личная команда. Эта команда в вашем лице может записаться на проект, если выполнить его вы захотите в одиночку. вам необходимо зарегистрироваться на сайте в качестве исполнителя.',
-                                    desc_en: 'In order to start work on the project, you need to register on the site as an artist. Once you complete the registration process, you will automatically create your personal team. This team in your person can sign up for a project. You need to register on the site as an artist. Once you complete the registration process, you will automatically create your personal team. This team in your person can sign up for a project.',
-                                    skills: [1, 2],
+                                    url: '/projects/web/udachin_tech',
+                                    linkToSite: 'http://udachin.tech/',
+                                    icon: 'https://cdn1.savepice.ru/uploads/2019/9/19/22693186150623c85e17e2ab6311c481-full.png',
+                                    desc_ru: 'После того как мы с командой начали делать проект для нашего ВУЗа, я накопил опыта и решил сделать что-то свое. Поскольку университетский проект закрыт от чужих глаз, его код в резюме не положишь. Тогда мне и приходит на помощь этот сайт. Но помимо хвастовства, он всё же имеет практическую значимость: это хорошая централизация для всех ресурсов свзяанных со мной.',
+                                    desc_en: 'After the team and I began to make a project for our university, I gained experience and decided to do something of my own. Since the university project is closed from prying eyes, you can’t put its code in the summary. Then this site comes to my aid. But besides boasting, it still has practical significance: it is a good centralization for all the resources connected with me.',
+                                    skills: [1, 2, 3, 4, 5],
                                     images: [1, 2],
-                                    links: [1]
+                                    links: [1, 2]
                                 })
                                     Skill.create({
                                         name: 'ReactJS',
                                         icon: 'https://png.pngtree.com/svg/20170719/1217a8a69e.svg'
                                     })
                                     Skill.create({
-                                        name: 'ReactJS',
-                                        icon: 'https://png.pngtree.com/svg/20170719/1217a8a69e.svg'
+                                        name: 'NodeJs',
+                                        icon: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg'
                                     })
+                                    Skill.create({
+                                        name: 'Redux',
+                                        icon: 'https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png'
+                                    })
+                                    Skill.create({
+                                        name: 'Sequelize',
+                                        icon: 'https://camo.githubusercontent.com/fdf4b414a9d3805d497cd2568aee16a24e4098a9/687474703a2f2f646f63732e73657175656c697a656a732e636f6d2f6d616e75616c2f61737365742f6c6f676f2d736d616c6c2e706e67'
+                                    })
+                                    Skill.create({
+                                        name: 'Postgres',
+                                        icon: 'https://user-images.githubusercontent.com/24623425/36042969-f87531d4-0d8a-11e8-9dee-e87ab8c6a9e3.png'
+                                    })
+
                                     Image.create({
-                                        title: 'Главная страница',
+                                        title: 'Страница портфолио',
                                         src: 'https://sun9-27.userapi.com/c856016/v856016513/c113f/KDdbBZnEzx8.jpg'
                                     })
                                     Image.create({
-                                        title: 'Панель администрирования сайта',
+                                        title: 'Главная страница',
                                         src: 'https://pp.userapi.com/c856016/v856016513/c1149/4iqOKkzBDtY.jpg'
                                     })
                                     Link.create({
                                         name: 'Backend репозиторий',
-                                        url: 'https://ibb.co/xYm5Y4p',
+                                        url: 'https://github.com/Imlerix/personal_app_backend',
+                                    })
+                                    Link.create({
+                                        name: 'Frontend репозиторий',
+                                        url: 'https://github.com/Imlerix/personal_app_frontend',
                                     })
                     Link.create({
                         name: 'Github',
@@ -453,7 +470,7 @@ sequelize.sync()
                         icon: 'github'
                     })
                     Link.create({
-                        name: 'Vk',
+                        name: 'Вконтакте',
                         url: 'https://vk.com/imlerix',
                         isContacts: true,
                         icon: 'vk'
