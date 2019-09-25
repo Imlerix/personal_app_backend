@@ -4,13 +4,13 @@ const fs = require('fs');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const path = require('path');
-const pg = require('pg');
 const http = require('http');
 const PORT = 5000;
 
 const BlogRoute = require('./routes/blog')
 const PortfolioRoute = require('./routes/portfolio')
 const ContactsRoute = require('./routes/contacts')
+const AdminRoute = require('./routes/admin')
 
 const app = express();
 
@@ -23,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public/build')));
 app.use('/api/blog', BlogRoute)
 app.use('/api/portfolio', PortfolioRoute)
 app.use('/api/contacts', ContactsRoute)
+app.use('/api/admin', AdminRoute)
 
 let server = http.createServer(app);
 server.listen(PORT, function() {

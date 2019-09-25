@@ -45,7 +45,7 @@ router.post('/mail', async function (req, res, next) {
                 let info = await transporter.sendMail({
                     from: "vadim.golenko@yandex.ru",
                     to: 'vadim.golenko@yandex.ru',
-                    subject: "UDACHIN.RU// " + email + " // " + subject,
+                    subject: "UDACHIN // " + email + " // " + subject,
                     text: message,
                     html: ''
                 });

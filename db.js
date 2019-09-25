@@ -91,11 +91,11 @@ Article.init({
         allowNull: true
     },
     text_RU: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false
     },
     text_EN: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: true
     },
     views: {
@@ -360,8 +360,8 @@ sequelize.sync()
                         date: new Date(),
                         name_RU: 'Настройка Docker c PRER',
                         name_EN: 'Config Docker with PRER',
-                        text_RU: '',
-                        text_EN: '',
+                        text_RU: 'Многие думают, что Lorem Ipsum - взятый с потолка псевдо-латинский набор слов, но это не совсем так. Его корни уходят в один фрагмент классической латыни 45 года н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney, штат Вирджиния, взял одно из самых странных слов в Lorem Ipsum, "consectetur", и занялся его поисками в классической латинской литературе. В результате он нашёл неоспоримый первоисточник Lorem Ipsum в разделах 1.10.32 и 1.10.33 книги "de Finibus Bonorum et Malorum" ("О пределах добра и зла"), написанной Цицероном в 45 году н.э. Этот трактат по теории этики был очень популярен в эпоху Возрождения. Первая строка Lorem Ipsum, "Lorem ipsum dolor sit amet..", происходит от одной из строк в разделе 1.10.32',
+                        text_EN: 'But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?',
                         tags: [1]
                     })
                 }
@@ -420,7 +420,7 @@ sequelize.sync()
                                     url: '/projects/web/udachin_tech',
                                     linkToSite: 'http://udachin.tech/',
                                     icon: 'https://cdn1.savepice.ru/uploads/2019/9/19/22693186150623c85e17e2ab6311c481-full.png',
-                                    desc_ru: 'После того как мы с командой начали делать проект для нашего ВУЗа, я накопил опыта и решил сделать что-то свое. Поскольку университетский проект закрыт от чужих глаз, его код в резюме не положишь. Тогда мне и приходит на помощь этот сайт. Но помимо хвастовства, он всё же имеет практическую значимость: это хорошая централизация для всех ресурсов свзяанных со мной.',
+                                    desc_ru: 'После того как мы с командой начали делать проект для нашего ВУЗа, я накопил опыта и решил сделать что-то свое. Поскольку университетский проект закрыт от чужих глаз, его код в резюме не положишь. Тогда мне и приходит на помощь этот сайт. Но помимо хвастовства, он всё же имеет практическую значимость: это хорошая централизация для всех ресурсов связанных со мной.',
                                     desc_en: 'After the team and I began to make a project for our university, I gained experience and decided to do something of my own. Since the university project is closed from prying eyes, you can’t put its code in the summary. Then this site comes to my aid. But besides boasting, it still has practical significance: it is a good centralization for all the resources connected with me.',
                                     skills: [1, 2, 3, 4, 5],
                                     images: [1, 2],
