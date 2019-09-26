@@ -9,4 +9,4 @@ RUN apk add --virtual .gyp \
     && apk del .gyp
 COPY . /app
 ENTRYPOINT npm run start
-EXPOSE 8080
+EXPOSE 5000

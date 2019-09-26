@@ -68,6 +68,9 @@ class Skill extends Model {}
 // Common class
 class Image extends Model {}
 class Link extends Model {}
+// Admin class
+class Token extends Model {}
+class User extends Model {}
 
 // Blog init
 Article.init({
@@ -332,6 +335,34 @@ Link.init({
     },
 }, {sequelize, modelName: 'link' });
 
+// Admin init
+Token.init({
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    user_id: {
+        type: Sequelize.INTEGER,
+    },
+    token: Sequelize.TEXT
+}, {sequelize, modelName: 'token'});
+User.init({
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true
+    },
+    password: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    },
+    login: {
+        type: Sequelize.TEXT,
+        allowNull: false
+    }
+}, {sequelize, modelName: 'user'});
+
 
 sequelize.sync()
     .then(() => {
@@ -490,6 +521,8 @@ module.exports = {
     Project,
     Skill,
     Image,
-    Link
+    Link,
+    Token,
+    User
 }
 
