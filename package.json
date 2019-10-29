@@ -23,6 +23,6 @@
     "pg": "*",
     "pg-hstore": "^2.3.3",
     "request-promise": "^4.2.4",
-    "sequelize": "^5.12.3"
+    "sequelize": "^5.15.1"
   }
 }
